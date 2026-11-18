@@ -1,0 +1,46 @@
+### GET /
+GET http://localhost:5003
+
+### Register a user POST /AUTH/REGISTER
+POST http://localhost:5003/auth/register
+Content-Type: application/json
+
+{
+    "username": "user@example.com",
+    "password": "replace_with_password"
+}
+
+### Login a user POST /AUTH/LOGIN
+POST http://localhost:5003/auth/login
+Content-Type: application/json
+
+{
+    "username": "user@example.com",
+    "password": "replace_with_password"
+}
+
+### Fetch all todos GET /TODOS (protected)
+GET http://localhost:5003/todos
+Authorization: REPLACE_WITH_TOKEN
+
+### Creates a new todo POST /TODOS (protected)
+POST http://localhost:5003/todos
+Authorization: REPLACE_WITH_TOKEN
+Content-Type: application/json 
+
+{
+    "task": "Finish coding the projects"
+}
+
+### Update a todo PUT /TODOS/:ID (protected)
+PUT http://localhost:5003/todos/2?page=4
+Authorization: REPLACE_WITH_TOKEN
+Content-Type: application/json
+
+{
+    "completed": 1
+}
+
+### Delete a todo DELETE /TODOS/:ID (protected)
+DELETE http://localhost:5003/todos/2
+Authorization: REPLACE_WITH_TOKEN
